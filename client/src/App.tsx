@@ -27,7 +27,7 @@ function App() {
         console.error(error);
       }
     };
-
+if(!projects) throw new Error ("No projects")
     getProjects();
   }, []);
   return (

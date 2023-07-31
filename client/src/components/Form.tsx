@@ -11,6 +11,7 @@ const Form = () => {
         const src4 = e.target.src4.value;
         const description = e.target.description.value;
         const { data } = await axios.post("/api/project/add-project", { name, src1, src2, src3, src4, description });
+        if (!data) throw new Error ("Could find data");
       }
 
   return (

@@ -6,7 +6,7 @@ const useLoading = () => {
   useEffect(() => {
   const handleLoading = () => {
     setIsLoading(true);
-  
+    setError(error)
       setTimeout(() => {
         setIsLoading(false);
       }, 2000);

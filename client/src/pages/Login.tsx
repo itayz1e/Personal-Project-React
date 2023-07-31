@@ -1,11 +1,10 @@
 import axios from "axios";
 import "../style/register-login.scss";
-import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
  const  Login = () =>  {
   const navigate = useNavigate();
-  const [isTrue, setIsTrue] = useState(false);
+
   async function handleLogin(ev: any) {
     try {
       ev.preventDefault();

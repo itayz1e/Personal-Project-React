@@ -3,7 +3,6 @@ import "../style/projects.scss";
 import ProjectCard from "../components/ProjectCard";
 import { Outlet } from "react-router-dom";
 import { BallTriangle } from 'react-loader-spinner';
-import { useState } from "react";
 import useLoading from "../hooks/useLoading";
 
 
