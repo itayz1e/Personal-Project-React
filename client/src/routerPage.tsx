@@ -7,6 +7,7 @@ import Login from "./pages/Login.tsx";
 import Admin from "./pages/Admin.tsx";
 import Projects from "./pages/Projects.tsx";
 import ProjectData from "./pages/ProjectData.tsx";
+import Profile from "./pages/Profile.tsx";
 
 
 export const router = ([
@@ -19,5 +20,6 @@ export const router = ([
   <Route path="*" element={<ErrorPage />}/>,
   <Route key="projects" path="/projects" element={<Projects />}/>,
   <Route path="/projects/:_id" element={<ProjectData />}/>,
+  <Route path="/profile" element={<Profile />}/>,
 </Routes>
 ]);

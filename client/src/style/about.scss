@@ -1,6 +1,6 @@
 #resume {
 display: flex;
-  background: url("http://leta.artrow.net/images/background.jpg");
+  // background: url("http://leta.artrow.net/images/background.jpg");
   color: #333333;
   font: 14px/20px "Open Sans", Helvetica, Arial, sans-serif;
   border-radius: 20px;
@@ -83,6 +83,7 @@ display: flex;
 #resume .right-column .substrate {
     width: 100%;
     margin-left: 25px;
+    width: 50%;
 }
 
 #resume .gradient-blue {

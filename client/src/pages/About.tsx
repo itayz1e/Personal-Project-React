@@ -22,7 +22,7 @@ const About = () => {
             <h2>My Profile</h2>
             <img
               className="profilepic"
-              src="../../public/me.jpg"
+              src="../../public/me.png"
               alt="abhaymakadia"
             />
             <ul className="main-info-list">
@@ -101,11 +101,11 @@ const About = () => {
           </div>
 
           <div className="substrate" key="progress">
-            <h2>My Progress</h2>
+            <h2>Skills</h2>
             <h3>Web Development</h3>
             <ul className="skills">
               <li className="skill">
-                <span>HTML</span>
+                <span>HTML5</span>
                 <div className="b">
                   <span className="eighty"></span>
                 </div>

@@ -5,10 +5,8 @@
   --clr-accent-4: #0211dd;
   --clr-accent-5: #4e4c2d;
   --clr-accent-6: #000000;
-
   --bg-primary: #22262a;
   --text-primary: #999999;
-
   --transition: 500ms ease-out;
 }
 
@@ -19,41 +17,48 @@
 .primary-nav li:nth-child(5) { --_color: var(--clr-accent-5) }
 .primary-nav li:nth-child(6) { --_color: var(--clr-accent-6) }
 
-
 ul:where([role="list"]) {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.nav-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 .primary-nav {
   background-color: rgb(146, 137, 145);
-  display: inline-block;
-  width: 25%;
-  margin: 0;
-  background-color: rgb(146, 137, 145);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
   --_nav-max-width: 200px;
   --_nav-padding-inline: 1rem;
   --_nav-padding-block: 1rem;
-  width: min(100%, var(--_nav-max-width));
-  padding-inline: var(--_nav-padding-inline);
-  padding-block: var(--_nav-padding-block);
 }
 
 .primary-nav ul {
-  display: grid;
+  display: flex;
+  justify-content: end;
   gap: 0.5rem;
 }
 
 .nav-link {
-  display: inline-flex;
-  width: 100%;
   text-decoration: none;
   color: inherit;
   padding: 0.5em 1em;
   position: relative;
   overflow: hidden;
   transition: color var(--transition);
+  text-align: center;
 }
 
 .nav-link:hover {
