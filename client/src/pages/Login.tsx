@@ -2,7 +2,7 @@ import axios from "axios";
 import "../style/register-login.scss";
 import { Link, useNavigate } from "react-router-dom";
 
- const  Login = () =>  {
+const Login = () => {
   const navigate = useNavigate();
 
   async function handleLogin(ev: any) {

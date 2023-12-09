@@ -1,36 +1,10 @@
 import { Link } from "react-router-dom";
 import "./App.scss";
 import NavBar from "./components/NavBar";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { Box, Button } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
-interface Project {
-  _id: string;
-  name: string;
-  src1: string;
-  src2: string;
-  src3: string;
-  src4: string;
-}
-
 function App() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    const getProjects = async () => {
-      try {
-        const response = await axios.get("/api/project/get-projects");
-        const { data } = response;
-        setProjects(data);
-      } catch (error: any) {
-        console.error(error);
-      }
-    };
-    if (!projects) throw new Error("No projects");
-    getProjects();
-  }, []);
   return (
     <>
       <NavBar />
@@ -95,7 +69,7 @@ function App() {
             variant="contained"
             endIcon={<SendIcon />}
           >
-            <Link style={{color:"black"}} to={"/projects"}>
+            <Link style={{ color: "black" }} to={"/projects"}>
               Let's get started:
               <h3>Projects</h3>
             </Link>

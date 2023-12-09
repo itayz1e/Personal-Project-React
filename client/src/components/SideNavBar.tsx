@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   Divider,
@@ -45,8 +44,8 @@ function SideNavBar() {
                 <ListItemIcon>
                   <HomeIcon />
                 </ListItemIcon>
-                <Link style={{color:"black"}} to={"/"}>
-                <ListItemText>Home</ListItemText>
+                <Link style={{ color: "black" }} to={"/"}>
+                  <ListItemText>Home</ListItemText>
                 </Link>
               </ListItemButton>
             </ListItem>
@@ -55,8 +54,8 @@ function SideNavBar() {
                 <ListItemIcon>
                   <AccountTreeIcon />
                 </ListItemIcon>
-                <Link style={{color:"black"}} to={"/projects"}>
-                <ListItemText>projects</ListItemText>
+                <Link style={{ color: "black" }} to={"/projects"}>
+                  <ListItemText>projects</ListItemText>
                 </Link>
               </ListItemButton>
             </ListItem>
