@@ -1,6 +1,9 @@
 aside {
   left: 80% !important;
-  background-color: rgb(146, 137, 145);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: "1px solid";
+  cursor: "pointer";
   display: inline-block;
   height: 100vh;
   top: 0% !important;
@@ -8,8 +11,10 @@ aside {
   width: 25%;
   header {
     margin: 0 !important;
-    box-sizing: border-box;
-    background-color: darkblue;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: "1px solid";
+    cursor: "pointer";
     height: 100px;
     padding: 0 15px;
     width: 100%;
@@ -22,20 +27,6 @@ aside {
     img {
       border-radius: 50%;
     }
-    p {
-      font-size: 13px;
-      color: white;
-      margin-left: 10px;
-      text-transform: uppercase;
-    }
-    > div {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
-  .profile{
-
   }
   .profile-picture {
     height: 25%;
@@ -44,19 +35,4 @@ aside {
   }
 }
 
-.side-navigation {
-  font-size: 30px;
-  font-family: "Times New Roman", Times, serif;
-  a {
-    color: rgb(231, 27, 27);
-    display: block;
-    padding: 15px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  i.fa {
-    color: grey;
-    font-size: 20px;
-    margin-right: 20px;
-  }
-}
+

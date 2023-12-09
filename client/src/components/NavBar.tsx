@@ -47,7 +47,7 @@ function NavBar() {
     <AppBar position="static" sx={{ backgroundColor: "#333" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/*Icon*/}
           <Typography
             variant="h6"
             noWrap
@@ -57,7 +57,7 @@ function NavBar() {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
-              // fontWeight: 700,
+              fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",

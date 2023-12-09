@@ -1,5 +1,7 @@
 import axios from 'axios';
 import "../style/form.scss"
+import { Button } from '@mui/material';
+import CreateIcon from '@mui/icons-material/Create';
 
 const Form = () => {
     async function handleAddProject(e: any) {
@@ -26,7 +28,17 @@ const Form = () => {
         <input type="text" name="src3" placeholder="Project url-3" />
         <input type="text" name="src4" placeholder="Project url-4" />
         <input type="text" name="description" placeholder="Project description" />
-        <button type="submit">create</button>
+        <Button
+            sx={{
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              backdropFilter: "blur(5px)",
+              border: "1px solid",
+            }}
+            variant="contained"
+            endIcon={<CreateIcon />}
+          >
+            create
+          </Button>
       </form>
     </div>
     </>

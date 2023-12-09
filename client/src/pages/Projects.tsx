@@ -11,13 +11,13 @@ const Projects = () => {
   return (
     <>
       <NavBar />
-      {isLoading ? <div className="loadigContainer "> ( <BallTriangle
+      {isLoading ? <div className="loadigContainer "><BallTriangle
   margin-left= "50"
   height="580"
   width="580"
   color="lightblue"
   ariaLabel="loading"
-/>)</div>:
+/></div>:
       <div className="homepage" >
         <div className="navbar"></div>
         <div className="content">

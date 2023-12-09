@@ -43,13 +43,13 @@ const {isLoading} =useLoading();
   return (
     <>
       <NavBar />
-{isLoading ? <div className="loadigContainer "> ( <BallTriangle
+{isLoading ? <div className="loadigContainer "><BallTriangle
   margin-left= "50"
   height="580"
   width="580"
   color="lightblue"
   ariaLabel="loading"
-/>)</div>:
+/></div>:
         <><div className="gallery">
           <h1 className="masking">{project.name}</h1>
           <label className="gallery__item"><img src={project.src1} /></label>
