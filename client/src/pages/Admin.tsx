@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../style/admin.scss";
 import Form from "../components/Form";
 import useGetUser from "../hooks/useGetUser";
