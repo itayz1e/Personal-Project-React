@@ -28,7 +28,8 @@
 
 
 .ImageListItemBar {
-  transition: height 0.1s;
+  transition: height 0.3s;
+  display: block;
 }
 
 .ImageListItemBar:hover {
@@ -45,10 +46,6 @@
 }
 
 .ImageListItemBar:hover .description {
-  // white-space: normal;
+  white-space: normal;
   display: block;
-}
-
-.project-link:hover {
-  background-color: #ff0606;
 }
