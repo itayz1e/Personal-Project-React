@@ -13,19 +13,25 @@ import HomeIcon from "@mui/icons-material/Home";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import Analytics from '@mui/icons-material/Analytics';
 
 function SideNavBar() {
+  const drawerWidth = 0;
   return (
-    <Drawer
-      sx={{
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
-          boxSizing: "border-box",
-        },
-      }}
-      variant="permanent"
-      anchor="right"
-    >
+<Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+          border:"none"
+        }}
+        variant="permanent"
+        anchor="right"
+      >
       <Toolbar />
       <aside>
         <header>
@@ -60,8 +66,18 @@ function SideNavBar() {
               </ListItemButton>
             </ListItem>
           </List>
-          <Divider />
+          <Divider style={{ borderColor: "black" }} />
           <List>
+          <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <Analytics />
+                </ListItemIcon>
+                <Link style={{ color: "black" }} to={"/"}>
+                  <ListItemText>Analytics</ListItemText>
+                </Link>
+              </ListItemButton>
+            </ListItem>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
@@ -76,6 +92,16 @@ function SideNavBar() {
                   <PeopleAltIcon />
                 </ListItemIcon>
                 <ListItemText>Users</ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <EditNoteIcon />
+                </ListItemIcon>
+                <Link style={{ color: "black" }} to={"/"}>
+                  <ListItemText>ADD PROJECT</ListItemText>
+                </Link>
               </ListItemButton>
             </ListItem>
           </List>
