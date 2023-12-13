@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {
+  Button,
   Divider,
   ListItem,
   ListItemButton,
@@ -13,25 +14,31 @@ import HomeIcon from "@mui/icons-material/Home";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import Analytics from '@mui/icons-material/Analytics';
-
-function SideNavBar() {
-  const drawerWidth = 0;
+import EditNoteIcon from "@mui/icons-material/EditNote";
+import Analytics from "@mui/icons-material/Analytics";
+interface SideNavBarProps {
+  onAddProject: () => void;
+  onShowAnalytics: () => void;
+}
+const drawerWidth = 0;
+const SideNavBar: React.FC<SideNavBarProps> = ({
+  onAddProject,
+  onShowAnalytics,
+}) => {
   return (
-<Drawer
-        sx={{
+    <Drawer
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        "& .MuiDrawer-paper": {
           width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-          border:"none"
-        }}
-        variant="permanent"
-        anchor="right"
-      >
+          boxSizing: "border-box",
+        },
+        border: "none",
+      }}
+      variant="permanent"
+      anchor="right"
+    >
       <Toolbar />
       <aside>
         <header>
@@ -43,7 +50,7 @@ function SideNavBar() {
             />
             <p>Itay Amosi</p>
           </div>
-          <Divider />
+          <Divider style={{ borderColor: "black" }} />
           <List>
             <ListItem disablePadding>
               <ListItemButton>
@@ -68,14 +75,30 @@ function SideNavBar() {
           </List>
           <Divider style={{ borderColor: "black" }} />
           <List>
-          <ListItem disablePadding>
+            <ListItem disablePadding>
               <ListItemButton>
                 <ListItemIcon>
                   <Analytics />
                 </ListItemIcon>
-                <Link style={{ color: "black" }} to={"/"}>
+                <Button
+                  style={{ color: "black", textTransform: "none" }}
+                  onClick={() => onShowAnalytics()}
+                >
                   <ListItemText>Analytics</ListItemText>
-                </Link>
+                </Button>
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <EditNoteIcon />
+                </ListItemIcon>
+                <Button
+                  style={{ color: "black", textTransform: "none" }}
+                  onClick={() => onAddProject()}
+                >
+                  <ListItemText>Add Prroject</ListItemText>
+                </Button>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -94,21 +117,11 @@ function SideNavBar() {
                 <ListItemText>Users</ListItemText>
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <EditNoteIcon />
-                </ListItemIcon>
-                <Link style={{ color: "black" }} to={"/"}>
-                  <ListItemText>ADD PROJECT</ListItemText>
-                </Link>
-              </ListItemButton>
-            </ListItem>
           </List>
         </header>
       </aside>
     </Drawer>
   );
-}
+};
 
 export default SideNavBar;

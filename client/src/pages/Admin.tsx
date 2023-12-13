@@ -1,17 +1,32 @@
 import "../style/admin.scss";
 import Form from "../components/Form";
 import useGetUser from "../hooks/useGetUser";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BallTriangle } from "react-loader-spinner";
 import useLoading from "../hooks/useLoading";
 import SideNavBar from "../components/SideNavBar";
-
+import PageAnalytics from "../components/Analytics/PageAnalytics";
+import ScrollPlayground from "../components/Analytics/UserAnalytics";
 
 const Admin = () => {
   const { isLoading } = useLoading();
   const { isAdmin, user } = useGetUser();
+  const [showForm, setShowForm] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(true);
   const navigate = useNavigate();
+
+
+  const handleAddProject = () => {
+    setShowForm(true);
+    setShowAnalytics(false); // Hide analytics when adding a project
+  };
+
+  const handleShowAnalytics = () => {
+    setShowAnalytics(true);
+    setShowForm(false); // Hide form when showing analytics
+  };
+
 
   useEffect(() => {
     if (!isAdmin && user) {
@@ -21,7 +36,6 @@ const Admin = () => {
 
   return (
     <>
-
       {isLoading ? (
         <div className="loadigContainer">
           <BallTriangle
@@ -32,12 +46,17 @@ const Admin = () => {
             ariaLabel="loading"
           />
         </div>
-      ) : (
+      ) : 
         <>
-        <SideNavBar />
-          <Form />
+          <SideNavBar
+            onAddProject={handleAddProject}
+            onShowAnalytics={handleShowAnalytics}
+          />
+          {showForm && <Form onClose={() => setShowForm(false)} />}
+          {showAnalytics && <PageAnalytics />}
+        <ScrollPlayground />
         </>
-      )}
+      }
     </>
   );
 };
