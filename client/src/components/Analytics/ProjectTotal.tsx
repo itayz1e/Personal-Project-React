@@ -1,12 +1,10 @@
-import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
-import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import PermMediaIcon from '@mui/icons-material/PermMedia';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
 
 
 
 const ProjectTotal = (props: any) => {
-  const { difference, positive = false, sx, value } = props;
+  const { difference = false, sx } = props;
 
   return (
     <Card sx={sx}>

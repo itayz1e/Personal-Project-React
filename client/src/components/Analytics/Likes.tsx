@@ -11,7 +11,7 @@ import {
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Likes = (props: any) => {
-  const { difference, positive = false, sx, value } = props;
+  const { difference, positive = false, sx } = props;
 
   return (
     <Card sx={sx}>
