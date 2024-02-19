@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.ts",
     "start": "ts-node server.ts",
-    "build": "npm i && cd client && npm install && npm run build --output public"
+    "build": "npm i && cd client && npm install && npm run build"
     
   },
   "keywords": [],
