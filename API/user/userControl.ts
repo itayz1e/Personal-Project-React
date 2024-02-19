@@ -30,7 +30,7 @@ export const login = async (req: any, res: any) => {
     const JWT_SECRET="sdsdgffdgdfasSFDFBDF"
     const secret = process.env.JWT_SECRET;
     const { username, password } = req.body;
-    const userDB = await UserModel.find({ username, password });
+    const userDB = await UserModel.find({username, password});
 
     if (!userDB) {
       res.status(401).send({
@@ -39,11 +39,12 @@ export const login = async (req: any, res: any) => {
       return;
     }
     if (!secret) throw new Error("Server Error");
-    // const token = jwt.encode({ userId: userDB._id }, secret);
-    // res.cookie("currentUser", token, {
-      // maxAge: 999 * 999 * 999,
-      // httpOnly: true,
-    // });
+    //@ts-ignore
+    const token = jwt.encode({ userId: userDB._id }, secret);
+    res.cookie("currentUser", token, {
+      maxAge: 999 * 999 * 999,
+      httpOnly: true,
+    });
     res.status(201).send({ ok: true, userDB });
   } catch (error: any) {
     console.error(error);
