@@ -30,7 +30,7 @@ export const login = async (req: any, res: any) => {
     const JWT_SECRET="sdsdgffdgdfasSFDFBDF"
     const secret = process.env.JWT_SECRET;
     const { username, password } = req.body;
-    const userDB = await UserModel.findOne({ username, password });
+    const userDB = await UserModel.find({ username, password });
 
     if (!userDB) {
       res.status(401).send({
