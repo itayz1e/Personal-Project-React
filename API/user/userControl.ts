@@ -39,11 +39,11 @@ export const login = async (req: any, res: any) => {
       return;
     }
     if (!secret) throw new Error("Server Error");
-    const token = jwt.encode({ userId: userDB._id }, secret);
-    res.cookie("currentUser", token, {
-      maxAge: 999 * 999 * 999,
-      httpOnly: true,
-    });
+    // const token = jwt.encode({ userId: userDB._id }, secret);
+    // res.cookie("currentUser", token, {
+      // maxAge: 999 * 999 * 999,
+      // httpOnly: true,
+    // });
     res.status(201).send({ ok: true, userDB });
   } catch (error: any) {
     console.error(error);
