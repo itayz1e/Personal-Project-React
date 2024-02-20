@@ -41,6 +41,7 @@ app.use('/api/comment', commentRouter)
 
 //static file
 app.use(express.static("./client/dist"));
+app.use(express.static("./client/public"));
 
 app.listen(4000, () => {
   console.log("server listen on port 4000");

@@ -29,7 +29,7 @@ const About = () => {
               <img
                 className="profilepic"
                 src="../../public/me.png"
-                alt="abhaymakadia"
+                alt="Profile image"
               />
               <ul className="main-info-list">
                 <li>
