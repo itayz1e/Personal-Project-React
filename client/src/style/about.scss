@@ -1,5 +1,5 @@
 #resume {
-display: flex;
+  display: flex;
   // background: url("http://leta.artrow.net/images/background.jpg");
   color: #333333;
   font: 14px/20px "Open Sans", Helvetica, Arial, sans-serif;
@@ -8,6 +8,7 @@ display: flex;
   position: relative;
   width: 100%;
   z-index: 0;
+  justify-content: center;
 
 
 }
@@ -81,14 +82,13 @@ display: flex;
 }
 
 #resume .right-column .substrate {
-    width: 100%;
-    margin-left: 25px;
-    width: 50%;
+  width: 100%;
+  margin-left: 25px;
+  width: 50%;
 }
 
 #resume .gradient-blue {
-  background: linear-gradient(to bottom, #479cd7 0%, #2c7eb8 100%) repeat scroll
-    0 0 rgba(0, 0, 0, 0);
+  background: linear-gradient(to bottom, #479cd7 0%, #2c7eb8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 #resume .substrate h2 {
@@ -225,8 +225,7 @@ display: flex;
 #resume .paper-clip {
   width: 60px;
   height: 85px;
-  background: url("https://lh5.googleusercontent.com/-_VvJpGXP9N0/UwdDY7l-CQI/AAAAAAAABTI/xXPDe4i5lbQ/s330/paper-clip.png")
-    repeat scroll 0% 0% transparent;
+  background: url("https://lh5.googleusercontent.com/-_VvJpGXP9N0/UwdDY7l-CQI/AAAAAAAABTI/xXPDe4i5lbQ/s330/paper-clip.png") repeat scroll 0% 0% transparent;
   position: absolute;
   top: -14px;
   right: -13px;
@@ -265,6 +264,7 @@ display: flex;
     font-weight: 600;
   }
 }
+
 @media screen and (max-width: 620px) {
   #resume {
     width: 320px;
