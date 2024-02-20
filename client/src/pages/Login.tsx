@@ -1,9 +1,12 @@
 import axios from "axios";
 import "../style/register-login.scss";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [ error ,setError ] = useState();
+  
 
   async function handleLogin(ev: any) {
     try {
@@ -15,12 +18,15 @@ const Login = () => {
       const loginUser: any = { username, password };
 
       const { data } = await axios.post("/api/user/get-user", loginUser);
+      setError(data.error)
+      console.log(data.error,"data");
       const { ok } = data;
       if (ok) {
         navigate("/");
       }
     } catch (error: any) {
-      console.error(error.message);
+      setError(error.message)
+      console.error(setError);
     }
   }
   return (
@@ -51,6 +57,7 @@ const Login = () => {
             </div>
             <div className="button">
               <input type="submit" value="Login" />
+            {error && <p className="error">{error}</p>}
             </div>
             <p>
               Not yet registered:

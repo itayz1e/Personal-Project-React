@@ -14,19 +14,20 @@ const Admin = () => {
   const { isAdmin, user } = useGetUser();
   const [showForm, setShowForm] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(true);
+  const [showTotal, setShowTotal] = useState(true); // New state for total
   const navigate = useNavigate();
-
 
   const handleAddProject = () => {
     setShowForm(true);
     setShowAnalytics(false); // Hide analytics when adding a project
+    setShowTotal(false); // Hide total when adding a project
   };
 
   const handleShowAnalytics = () => {
     setShowAnalytics(true);
     setShowForm(false); // Hide form when showing analytics
+    setShowTotal(true); // Show total when showing analytics
   };
-
 
   useEffect(() => {
     if (!isAdmin && user) {
@@ -37,7 +38,7 @@ const Admin = () => {
   return (
     <>
       {isLoading ? (
-        <div className="loadigContainer">
+        <div className="loadingContainer">
           <BallTriangle
             margin-left="50"
             height="580"
@@ -46,7 +47,7 @@ const Admin = () => {
             ariaLabel="loading"
           />
         </div>
-      ) : 
+      ) : (
         <>
           <SideNavBar
             onAddProject={handleAddProject}
@@ -54,9 +55,9 @@ const Admin = () => {
           />
           {showForm && <Form onClose={() => setShowForm(false)} />}
           {showAnalytics && <PageAnalytics />}
-        <ScrollPlayground />
+          {showTotal && <ScrollPlayground />}
         </>
-      }
+      )}
     </>
   );
 };
